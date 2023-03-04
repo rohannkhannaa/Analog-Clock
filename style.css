@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  .btn{
+    height: 3rem;
+    width : 10rem;
+    opacity: 50%;
+  }
+  .delete{
+    display: none;
+    opacity: 0;
+  }
+  html,
+  body {
+    font-family: "Share Tech", sans-serif;
+    font-size: 68px;
+    color: rgb(86, 66, 66);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    text-shadow: 8px 8px 10px #675c5c8c;
+    background-color: #5c636a;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+      linear-gradient(to right top, #646e78, #525568, #55425e, #957384, #802020);
+    font-size: 0.7rem;
+    font-family: "lato", Arial, sans-serif;
+  }
+  body {
+    background-color: grey;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .toggler {
+    position: relative;
+    top: 10rem;
+    display: inline;
+  }
+  
+  .container {
+    width: 33rem;
+    height: 33rem;
+    background: #d1dbe3;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 -1.2em 1.2em rgba(255, 255, 255, 0.06),
+      inset 0 -1.2em 1.2em rgba(255, 255, 255, 0.06),
+      0 1.2em 1.2em rgba(0, 0, 0, 0.3), inset 0 1.2em 1.2em rgba(0, 0, 0, 0.3);
+    border: 0.4rem solid #2a2829;
+  }
+  .container .number {
+    --rotateAngle: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotateAngle));
+    font-size: 2.5rem;
+    padding: 0.7rem;
+  }
+  .container .number1 {
+    --rotateAngle: 30deg;
+  }
+  .container .number2 {
+    --rotateAngle: 60deg;
+  }
+  .container .number3 {
+    --rotateAngle: 90deg;
+  }
+  .container .number4 {
+    --rotateAngle: 120deg;
+  }
+  .container .number5 {
+    --rotateAngle: 150deg;
+  }
+  .container .number6 {
+    --rotateAngle: 180deg;
+  }
+  .container .number7 {
+    --rotateAngle: 210deg;
+  }
+  .container .number8 {
+    --rotateAngle: 240deg;
+  }
+  .container .number9 {
+    --rotateAngle: 270deg;
+  }
+  .container .number10 {
+    --rotateAngle: 300deg;
+  }
+  .container .number11 {
+    --rotateAngle: 330deg;
+  }
+  
+  .container .number .undo {
+    --undoAngle: 0;
+    transform: rotate(var(--undoAngle));
+  }
+  .container .number1 .undo {
+    --undoAngle: -30deg;
+  }
+  .container .number2 .undo {
+    --undoAngle: -60deg;
+  }
+  .container .number3 .undo {
+    --undoAngle: -90deg;
+  }
+  .container .number4 .undo {
+    --undoAngle: -120deg;
+  }
+  .container .number5 .undo {
+    --undoAngle: -150deg;
+  }
+  .container .number6 .undo {
+    --undoAngle: -180deg;
+  }
+  .container .number7 .undo {
+    --undoAngle: -210deg;
+  }
+  .container .number8 .undo {
+    --undoAngle: -240deg;
+  }
+  .container .number9 .undo {
+    --undoAngle: -270deg;
+  }
+  .container .number10 .undo {
+    --undoAngle: -300deg;
+  }
+  .container .number11 .undo {
+    --undoAngle: -330deg;
+  }
+  
+  .clock {
+    padding: 1rem;
+    border: SOLID #4eb5dd 0.01rem;
+    position: relative;
+    top: 60%;
+    left: 27.5%;
+    color: white;
+    background-color: rgb(184, 141, 141);
+    width : 15.2rem;
+    font-size: 2rem;
+    font-family: Orbitron;
+    letter-spacing: 0.2rem;
+    z-index: 1;
+  }
+  
+  .container .hand {
+    background-color: black;
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    z-index: 10;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  .container .hour {
+    width: 1rem;
+    height: 8rem;
+    background-color: #101f25;
+  }
+  .container .minute {
+    width: 0.5rem;
+    height: 11rem;
+    background-color: #101f25;
+  }
+  .container .second {
+    width: 0.2rem;
+    height: 12rem;
+    background-color: red;
+  }
+  .container::after {
+    content: "";
+    position: absolute;
+    background-color: #757571;
+    z-index: 11;
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
